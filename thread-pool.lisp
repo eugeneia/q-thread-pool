@@ -1,8 +1,8 @@
-;;;; Thread pool based on JPL-QUEUES
+;;;; Thread pool based on JPL-QUEUES.
 
 (defpackage :q-thread-pool
   (:documentation
-   "Thread pool based on JPL-QUEUES")
+   "Thread pool based on JPL-QUEUES.")
   (:use :cl
 	:bordeaux-threads
  	:jpl-queues)

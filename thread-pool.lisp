@@ -25,13 +25,14 @@
 		    :name "pooling-thread")))
 
 (defun make-thread-pool (n-threads task-capacity)
-  "Return thread pool with N-THREADS and TASK-CAPACITY."
+  "Return thread pool with N-THREADS and TASK-CAPACITY. When
+TASK-CAPACITY is exceeded ENQUEUE-TASK will block."
   (let* ((task-queue (make-task-queue task-capacity))
 	 (threads (make-threads n-threads task-queue)))
     (cons task-queue threads)))
 
 (defmacro enqueue-task (thread-pool &body body)
-  "Enqeue a function with BODY in THREAD-POOL."
+  "Enqeue a closure with BODY in THREAD-POOL."
   `(enqueue (lambda () ,@body) (car ,thread-pool)))
 
 (defun destroy-thread-pool (thread-pool)

@@ -10,7 +10,7 @@
 (defsystem q-thread-pool
   :description
   "Thread pool based on JPL-QUEUES."
-  :version "1.0"
+  :version "1.0.2"
   :license "GNU AGPL"
   :author "Max Rottenkolber <max@mr.gy>"
   :components ((:file "thread-pool"))

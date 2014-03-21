@@ -32,7 +32,7 @@ TASK-CAPACITY is exceeded ENQUEUE-TASK will block."
     (cons task-queue threads)))
 
 (defmacro enqueue-task (thread-pool &body body)
-  "Enqeue a closure with BODY in THREAD-POOL."
+  "Enqueue a closure with BODY in THREAD-POOL."
   `(enqueue (lambda () ,@body) (car ,thread-pool)))
 
 (defun destroy-thread-pool (thread-pool)

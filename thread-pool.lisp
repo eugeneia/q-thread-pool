@@ -4,12 +4,12 @@
   (:documentation
    "Simple thread pools based on concurrent queues.
 
-    < Example
+    < Example Usage
 
      Use {make-thread-pool} to create a thread pool with 16 threads and a
      backlog of 32 and bind it to {pool}.
 
-     #code
+     #code#
      (setq pool (make-thread-pool 16 32))
      #
 
